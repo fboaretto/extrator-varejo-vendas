@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.projetandoo</groupId>
-	<artifactId>extrator-varejo-vendasMav</artifactId>
+	<artifactId>extrator-varejo-vendas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<name>Extrator de Vendas - Varejo Digital</name>
