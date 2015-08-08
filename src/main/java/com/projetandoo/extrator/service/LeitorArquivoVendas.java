@@ -29,10 +29,10 @@ import com.projetandoo.extrator.clienteWS.VendaType;
 public class LeitorArquivoVendas 
 {
 	private static final String LEITURA_VENDAS_DINHEIRO = 
-			"/home/fboaretto/Documentos/Projetandoo/arquivosExtracao/Vendas/lista_vendas_FINAL.txt";
+			".../lista_vendas_FINAL.txt";
 	
 	private static final String LEITURA_VENDAS_CARTAO = 
-			"/home/fboaretto/Documentos/Projetandoo/arquivosExtracao/Vendas/lista_vendas_CARTAO.txt";
+			".../lista_vendas_CARTAO.txt";
 
 	private static final String COD_BARRA_DEFAULT = "1111111111111";
 
@@ -46,6 +46,7 @@ public class LeitorArquivoVendas
 
 	public Map<String, VendaType> leArquivo(List<String> listaProcessada) throws IOException, DatatypeConfigurationException 
 	{
+		//FileWriter fWriter = new FileWriter(LEITURA_VENDAS_DINHEIRO);
 		FileWriter fWriter = new FileWriter(LEITURA_VENDAS_CARTAO);
 		PrintWriter pWriter = new PrintWriter(new BufferedWriter(fWriter));
 

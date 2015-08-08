@@ -28,14 +28,14 @@ public class ConsumidorVendas
 	public static void main(String[] args) throws IOException, DatatypeConfigurationException 
 	{
 		String arquivoCargaVendas = 
-				//"/home/fboaretto/Documentos/Projetandoo/arquivosExtracao/Vendas/sp001148.txt";
-				"/home/fboaretto/Documentos/Projetandoo/arquivosExtracao/Vendas/sp001149.txt";
+				//".../sp001148.txt";
+				".../sp001149.txt";
 		
 		String arquivoControleDinheiro = 
-				"/home/fboaretto/Documentos/Projetandoo/arquivosExtracao/Vendas/vendas_enviadas.txt";
+				".../vendas_enviadas.txt";
 		
 		String arquivoControleCartao = 
-				"/home/fboaretto/Documentos/Projetandoo/arquivosExtracao/Vendas/vendas_enviadas_cartao.txt";
+				".../vendas_enviadas_cartao.txt";
 
 		ProcessadorArquivoVendas processador = new ProcessadorArquivoVendas();
 		List<String> listaProcessada =  processador.processaArquivo(arquivoCargaVendas);
@@ -69,8 +69,8 @@ public class ConsumidorVendas
 			protected PasswordAuthentication getPasswordAuthentication() 
 			{
 				return new PasswordAuthentication(
-						"marcelosrodrigues@globo.com",
-						"12345678".toCharArray());
+						"...",
+						"...".toCharArray());
 			}
 		});
 
