@@ -3,47 +3,23 @@ package com.projetandoo.extrator.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class ItemVenda implements Serializable{
+public class ItemVenda implements Serializable
+{
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 5551199815289359909L;
 
-	private Long id;
-	
-	private Produto produto;
-	
-	private int quantidade;
-	
+	private BigDecimal quantidade;
+
 	private BigDecimal preco;
-	
-	private String nomeProduto;
-	
-	
-	@Override
-	public String toString() {
-		return getNomeProduto() + "||" + getQuantidade() + "||" + getPreco();
-	}
 
-	public Long getId() {
-		return id;
-	}
+	private Produto produto;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
 
-	public Produto getProduto() {
-		return produto;
-	}
-
-	public void setProduto(Produto produto) {
-		this.produto = produto;
-	}
-
-	public int getQuantidade() {
+	public BigDecimal getQuantidade() {
 		return quantidade;
 	}
 
-	public void setQuantidade(int quantidade) {
+	public void setQuantidade(BigDecimal quantidade) {
 		this.quantidade = quantidade;
 	}
 
@@ -55,12 +31,20 @@ public class ItemVenda implements Serializable{
 		this.preco = preco;
 	}
 
-	public String getNomeProduto() {
-		return nomeProduto;
+	public Produto getProduto() {
+		return produto;
 	}
 
-	public void setNomeProduto(String nomeProduto) {
-		this.nomeProduto = nomeProduto;
+	public void setProduto(Produto produto) {
+		this.produto = produto;
 	}
-	
+
+	@Override
+	public String toString()
+	{
+		return "ItemVenda [quantidade=" + quantidade + ", preco=" + preco
+				+ ", produto=" + produto + "]";
+	}
+
+
 }

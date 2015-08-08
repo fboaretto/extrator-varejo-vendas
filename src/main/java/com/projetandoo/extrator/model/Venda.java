@@ -1,43 +1,38 @@
 package com.projetandoo.extrator.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
+import java.util.List;
 
-public class Venda implements Serializable{
+public class Venda implements Serializable, Comparable<Venda> 
+{
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -4223724357585674565L;
 
-	private Long id;
+	private String documento;
+
+	private List<ItemVenda> items = new ArrayList<ItemVenda>();
+
+	private Loja loja;
 
 	private Date dataVenda;
 
-	private String numero;
 
-	private String tipoOperacao;
-
-	private int caixa;
-
-	private BigDecimal total;
-
-	private Collection<ItemVenda> items = new HashSet<ItemVenda>();
-
-
-	@Override
-	public String toString() {
-		return getId() + "||" + getNumero() + "||" + getTipoOperacao() + "||"
-				+ getCaixa() + "||" + getTotal() + "||" + getItems().size() + "||" + getDataVenda();
-	}
-	
-
-	public Long getId() {
-		return id;
+	public String getDocumento() {
+		return documento;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setDocumento(String documento) {
+		this.documento = documento;
+	}
+
+	public Loja getLoja() {
+		return loja;
+	}
+
+	public void setLoja(Loja loja) {
+		this.loja = loja;
 	}
 
 	public Date getDataVenda() {
@@ -48,44 +43,63 @@ public class Venda implements Serializable{
 		this.dataVenda = dataVenda;
 	}
 
-	public String getNumero() {
-		return numero;
-	}
-
-	public void setNumero(String numero) {
-		this.numero = numero;
-	}
-
-	public String getTipoOperacao() {
-		return tipoOperacao;
-	}
-
-	public void setTipoOperacao(String tipoOperacao) {
-		this.tipoOperacao = tipoOperacao;
-	}
-
-	public BigDecimal getTotal() {
-		return total;
-	}
-
-	public void setTotal(BigDecimal total) {
-		this.total = total;
-	}
-
-	public Collection<ItemVenda> getItems() {
+	public List<ItemVenda> getItems() {
 		return items;
 	}
 
-	public void setItems(Collection<ItemVenda> items) {
+	public void setItems(List<ItemVenda> items) {
 		this.items = items;
 	}
 
-	public int getCaixa() {
-		return caixa;
+	@Override
+	public String toString() 
+	{
+		return "Venda [documento=" + documento + ", items=" + items + ", loja="
+				+ loja + ", dataVenda=" + dataVenda + "]";
 	}
 
-	public void setCaixa(int caixa) {
-		this.caixa = caixa;
+	@Override
+	public int compareTo(Venda outraVenda) 
+	{
+		if (this.documento.equals(outraVenda.documento)) {
+			return 1;
+		}
+		return 0;
+	}
+
+	@Override
+	public int hashCode() 
+	{
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((dataVenda == null) ? 0 : dataVenda.hashCode());
+		result = prime * result
+				+ ((documento == null) ? 0 : documento.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) 
+	{
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Venda other = (Venda) obj;
+		if (dataVenda == null) {
+			if (other.dataVenda != null)
+				return false;
+		} else if (!dataVenda.equals(other.dataVenda))
+			return false;
+		if (documento == null) {
+			if (other.documento != null)
+				return false;
+		} else if (!documento.equals(other.documento))
+			return false;
+		return true;
 	}
 
 }

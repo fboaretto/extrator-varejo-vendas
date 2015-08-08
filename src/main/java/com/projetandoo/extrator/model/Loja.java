@@ -2,33 +2,41 @@ package com.projetandoo.extrator.model;
 
 import java.io.Serializable;
 
-public class Loja implements Serializable{
+public class Loja implements Serializable
+{
 
-	private static final long serialVersionUID = 1L;
-	
-	private Long id;
-	
-	private String nome;
+	private static final long serialVersionUID = 6160457143945962179L;
 
-	public Loja(String nome) {
-		this.nome = nome;
+	private long id;
+
+	private long codigoInterno;
+
+
+	public Loja(long id, long codigoInterno) {
+		this.id = id;
+		this.codigoInterno = codigoInterno;
 	}
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public long getCodigoInterno() {
+		return codigoInterno;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setCodigoInterno(long codigoInterno) {
+		this.codigoInterno = codigoInterno;
 	}
-	
+
+	@Override
+	public String toString() 
+	{
+		return "Loja [id=" + id + ", codigoInterno=" + codigoInterno + "]";
+	}
 
 }
